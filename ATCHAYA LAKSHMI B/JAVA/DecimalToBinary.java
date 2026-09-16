@@ -1,16 +1,5 @@
 import java.util.Scanner;
-
-/**
- * Question 1: Write a program to convert a decimal number to binary.
- * 
- * Logic:
- * Decimal numbers (base 10) can be converted to binary (base 2)
- * by repeatedly dividing the number by 2 and recording the remainders.
- * Reading the remainders in reverse order yields the binary equivalent.
- */
 public class DecimalToBinary {
-
-    // Method to convert a non-negative decimal integer to binary using custom logic
     public static String decimalToBinary(long decimal) {
         if (decimal == 0) {
             return "0";
@@ -25,8 +14,6 @@ public class DecimalToBinary {
             binary.append(remainder);
             num /= 2;
         }
-
-        // Reverse the string of remainders to get the actual binary representation
         String result = binary.reverse().toString();
         return isNegative ? "-" + result : result;
     }
@@ -34,18 +21,10 @@ public class DecimalToBinary {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("=========================================");
-        System.out.println("       DECIMAL TO BINARY CONVERTER       ");
-        System.out.println("=========================================");
-
         System.out.print("Enter a decimal number: ");
         if (scanner.hasNextLong()) {
             long decimal = scanner.nextLong();
-
-            // Using custom algorithmic method
             String binaryCustom = decimalToBinary(decimal);
-
-            // Using Java built-in utility for verification
             String binaryBuiltIn = Long.toBinaryString(decimal);
 
             System.out.println("\n--- Conversion Results ---");
