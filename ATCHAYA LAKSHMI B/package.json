@@ -1,0 +1,18 @@
+{
+  "name": "atchaya-lakshmi-b-solutions",
+  "version": "1.0.0",
+  "description": "Virtusa Team 2 - Programming Solutions in Java, TypeScript, and JavaScript by ATCHAYA LAKSHMI B",
+  "scripts": {
+    "ts:average": "ts-node TYPESCRIPT/AverageOfArray.ts",
+    "ts:even-odd": "ts-node TYPESCRIPT/EvenOrOdd.ts",
+    "ts:float-int": "ts-node TYPESCRIPT/CheckFloatOrInteger.ts",
+    "js:group-words": "node JAVASCRIPT/groupByFirstChar.js",
+    "js:title-case": "node JAVASCRIPT/toTitleCase.js",
+    "js:second-smallest": "node JAVASCRIPT/secondSmallest.js"
+  },
+  "devDependencies": {
+    "@types/node": "^26.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
