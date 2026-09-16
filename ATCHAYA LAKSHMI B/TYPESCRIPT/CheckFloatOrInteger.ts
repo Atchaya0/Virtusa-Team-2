@@ -1,16 +1,5 @@
 import * as readline from "readline";
 
-/**
- * Question 3: Check if a given number is a floating-point or integer in JavaScript/TypeScript.
- * 
- * Logic in JS/TS:
- * In JavaScript/TypeScript, all numbers are double-precision 64-bit binary format IEEE 754.
- * To distinguish between an integer and a floating-point number with a fractional part:
- * 1. Number.isInteger(val) - Checks if value is a finite integer.
- * 2. val % 1 !== 0        - Modulo 1 check (fractional remainder).
- * 3. Math.floor(val) !== val - Floor comparison.
- */
-
 export type NumberClassification = "Integer" | "Floating-Point" | "Special/Invalid";
 
 export function classifyNumber(num: number): {
@@ -45,10 +34,6 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-
-console.log("=========================================");
-console.log("  FLOAT VS INTEGER CHECKER (TS / JS)    ");
-console.log("=========================================");
 
 rl.question("Enter a number to check (e.g. 42 or 3.1415): ", (input: string) => {
     const trimmed = input.trim();
