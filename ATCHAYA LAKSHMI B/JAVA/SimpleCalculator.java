@@ -1,23 +1,8 @@
 import java.util.Scanner;
-
-/**
- * Question 3: Implement a simple calculator program using switch-case statements.
- * 
- * Supports:
- * - Addition (+)
- * - Subtraction (-)
- * - Multiplication (*)
- * - Division (/) with divide-by-zero check
- * - Modulus (%) with divide-by-zero check
- */
 public class SimpleCalculator {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("=========================================");
-        System.out.println("            SIMPLE CALCULATOR            ");
-        System.out.println("=========================================");
 
         System.out.print("Enter first number: ");
         if (!scanner.hasNextDouble()) {
@@ -40,8 +25,6 @@ public class SimpleCalculator {
 
         double result = 0;
         boolean isValidOperation = true;
-
-        // Switch-case statement for arithmetic operations
         switch (operator) {
             case '+':
                 result = num1 + num2;
