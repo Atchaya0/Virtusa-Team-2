@@ -1,22 +1,5 @@
-/**
- * Question 3: Write a program to find the second-smallest element in an array.
- * 
- * Approaches:
- * 1. Single-Pass O(N) Optimal Scan:
- *    Maintain two variables, firstMin and secondMin initialized to Infinity.
- *    Iterate through the array, updating accordingly for distinct values.
- * 
- * 2. Set & Sort Approach:
- *    Filter unique values using Set, sort in ascending order, and take index 1.
- */
 
 const readline = require("readline");
-
-/**
- * Finds the second-smallest distinct element in an array in O(n) time.
- * @param {number[]} arr - Array of numbers
- * @returns {number|null} Second smallest distinct number, or null if it doesn't exist
- */
 function findSecondSmallest(arr) {
     if (!Array.isArray(arr) || arr.length < 2) {
         return null;
@@ -37,25 +20,15 @@ function findSecondSmallest(arr) {
     return secondMin === Infinity ? null : secondMin;
 }
 
-/**
- * Alternative approach using Set and sort
- * @param {number[]} arr 
- * @returns {number|null}
- */
 function findSecondSmallestUsingSet(arr) {
     const uniqueSorted = Array.from(new Set(arr)).sort((a, b) => a - b);
     return uniqueSorted.length >= 2 ? uniqueSorted[1] : null;
 }
-
-// Interactive terminal CLI
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-console.log("=========================================");
-console.log("     SECOND-SMALLEST ELEMENT FINDER (JS) ");
-console.log("=========================================");
 
 rl.question("Enter numbers separated by spaces (or press Enter for default): ", (input) => {
     let numbers;
