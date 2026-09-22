@@ -1,17 +1,17 @@
 class Student {
-    // Properties
+    
     public name: string;
     public age: number;
     private grades: number[];
 
-    // Constructor
+    
     constructor(name: string, age: number, grades: number[] = []) {
         this.name = name;
         this.age = age;
         this.grades = grades;
     }
 
-    // Methods
+   
     public addGrade(grade: number): void {
         this.grades.push(grade);
     }
@@ -27,7 +27,3 @@ class Student {
     }
 }
 
-// Example usage:
-const student1 = new Student("Alice", 20, [85, 90, 92]);
-student1.addGrade(88);
-console.log(student1.getSummary()); // Output: Alice (Age: 20) - Average Grade: 88.75
