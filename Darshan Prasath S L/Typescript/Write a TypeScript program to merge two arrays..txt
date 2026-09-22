@@ -1,0 +1,15 @@
+function mergeArrays<T>(arr1: T[], arr2: T[]): T[] {
+    // The spread operator (...) unpacks both arrays into a new one
+    return [...arr1, ...arr2];
+}
+
+// Example usage:
+const numbers1 = [1, 2, 3];
+const numbers2 = [4, 5, 6];
+const mergedNumbers = mergeArrays<number>(numbers1, numbers2);
+console.log(mergedNumbers); // Output: [1, 2, 3, 4, 5, 6]
+
+const strings1 = ["apple", "banana"];
+const strings2 = ["cherry", "date"];
+const mergedStrings = mergeArrays<string>(strings1, strings2);
+console.log(mergedStrings); // Output: ["apple", "banana", "cherry", "date"]
