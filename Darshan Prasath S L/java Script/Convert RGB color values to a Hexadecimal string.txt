@@ -1,9 +1,9 @@
 function rgbToHex(r, g, b) {
-    // Helper function to convert a single color component
+   
     const componentToHex = (c) => {
-        // Clamp the value between 0 and 255 to prevent invalid inputs
+        
         const clamped = Math.max(0, Math.min(255, c));
-        // Convert to base 16 and pad with a leading zero if necessary
+        
         return clamped.toString(16).padStart(2, '0');
     };
 
@@ -11,6 +11,3 @@ function rgbToHex(r, g, b) {
     return hexString.toUpperCase(); // Optional: convert to uppercase for standard formatting
 }
 
-// Example usage:
-console.log(rgbToHex(255, 99, 71)); // Output: "#FF6347" (Tomato)
-console.log(rgbToHex(0, 0, 0));     // Output: "#000000" (Black)
