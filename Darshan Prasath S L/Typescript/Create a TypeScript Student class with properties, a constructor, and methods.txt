@@ -1,0 +1,33 @@
+class Student {
+    // Properties
+    public name: string;
+    public age: number;
+    private grades: number[];
+
+    // Constructor
+    constructor(name: string, age: number, grades: number[] = []) {
+        this.name = name;
+        this.age = age;
+        this.grades = grades;
+    }
+
+    // Methods
+    public addGrade(grade: number): void {
+        this.grades.push(grade);
+    }
+
+    public getAverageGrade(): number {
+        if (this.grades.length === 0) return 0;
+        const total = this.grades.reduce((sum, current) => sum + current, 0);
+        return total / this.grades.length;
+    }
+
+    public getSummary(): string {
+        return `${this.name} (Age: ${this.age}) - Average Grade: ${this.getAverageGrade().toFixed(2)}`;
+    }
+}
+
+// Example usage:
+const student1 = new Student("Alice", 20, [85, 90, 92]);
+student1.addGrade(88);
+console.log(student1.getSummary()); // Output: Alice (Age: 20) - Average Grade: 88.75
