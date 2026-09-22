@@ -1,9 +1,9 @@
 let n = Number(prompt("Enter a number:"));
 
-if (Number.isInteger(n)) {
-    console.log("Integer");
-} else if (Number.isFinite(n)) {
-    console.log("Floating-point number");
-} else {
+if (isNaN(n)) {
     console.log("Invalid number");
+} else if (n % 1 === 0) {
+    console.log("Integer");
+} else {
+    console.log("Floating-point number");
 }
