@@ -1,11 +1,11 @@
 function findShortestWord(sentence: string): string {
     if (!sentence.trim()) return "";
 
-    // Split by spaces and filter out empty strings in case of multiple spaces
+    
     const words = sentence.trim().split(/\s+/);
 
     return words.reduce((shortest, current) => {
-        // Strip basic punctuation for accurate length measurement
+        
         const cleanCurrent = current.replace(/[^a-zA-Z0-9]/g, "");
         const cleanShortest = shortest.replace(/[^a-zA-Z0-9]/g, "");
         
@@ -13,6 +13,3 @@ function findShortestWord(sentence: string): string {
     });
 }
 
-// Example usage:
-const sentence = "The quick brown fox jumps over the lazy dog";
-console.log(`Shortest word: "${findShortestWord(sentence)}"`); // Output: "The" or "fox" or "the" or "dog" depending on order (returns first match)
