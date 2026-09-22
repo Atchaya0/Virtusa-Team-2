@@ -1,72 +1,37 @@
 import java.util.Scanner;
-public class SimpleCalculator {
 
+class Calculator {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter first number: ");
-        if (!scanner.hasNextDouble()) {
-            System.out.println("Invalid input. Please enter a valid number.");
-            scanner.close();
-            return;
-        }
-        double num1 = scanner.nextDouble();
-
-        System.out.print("Enter operator (+, -, *, /, %): ");
-        char operator = scanner.next().charAt(0);
+        int a = sc.nextInt();
 
         System.out.print("Enter second number: ");
-        if (!scanner.hasNextDouble()) {
-            System.out.println("Invalid input. Please enter a valid number.");
-            scanner.close();
-            return;
-        }
-        double num2 = scanner.nextDouble();
+        int b = sc.nextInt();
 
-        double result = 0;
-        boolean isValidOperation = true;
-        switch (operator) {
+        System.out.print("Enter operator (+, -, *, /): ");
+        char op = sc.next().charAt(0);
+
+        switch (op) {
             case '+':
-                result = num1 + num2;
+                System.out.println("Result = " + (a + b));
                 break;
 
             case '-':
-                result = num1 - num2;
+                System.out.println("Result = " + (a - b));
                 break;
 
             case '*':
-                result = num1 * num2;
+                System.out.println("Result = " + (a * b));
                 break;
 
             case '/':
-                if (num2 == 0) {
-                    System.out.println("\nError: Division by zero is undefined!");
-                    isValidOperation = false;
-                } else {
-                    result = num1 / num2;
-                }
-                break;
-
-            case '%':
-                if (num2 == 0) {
-                    System.out.println("\nError: Modulo by zero is undefined!");
-                    isValidOperation = false;
-                } else {
-                    result = num1 % num2;
-                }
+                System.out.println("Result = " + (a / b));
                 break;
 
             default:
-                System.out.println("\nError: Invalid operator '" + operator + "'. Supported: +, -, *, /, %");
-                isValidOperation = false;
-                break;
+                System.out.println("Invalid operator");
         }
-
-        if (isValidOperation) {
-            System.out.println("\n--- Calculation Result ---");
-            System.out.printf("%.4f %c %.4f = %.4f%n", num1, operator, num2, result);
-        }
-
-        scanner.close();
     }
 }
